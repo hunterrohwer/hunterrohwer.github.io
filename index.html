@@ -1,13 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hunter Rohwer</title>
+    <meta
+      name="description"
+      content="Hunter Rohwer — Data Scientist & Builder. I ship clean, practical tools and models."
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <h1>Hunter Rohwer</h1>
-    <p>Data Scientist | Sports & Real Estate Analytics</p>
-    <p>Denver, CO</p>
+    <div class="wrap">
+      <header class="hero">
+        <div class="badge">Available for interesting problems</div>
+        <h1>Hunter Rohwer</h1>
+
+        <p class="subtitle">
+          Data Scientist & Builder — I turn messy data into useful tools, fast.
+        </p>
+
+        <div class="meta">
+          <span>Denver, CO</span>
+          <span class="dot">•</span>
+          <span>Python • SQL • Modeling • Automation</span>
+        </div>
+
+        <div class="cta">
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="card" id="about">
+          <h2>About</h2>
+          <p>
+            I’m a practical, hands-on data scientist who likes ownership.
+            If there’s ambiguity, I create clarity. If there’s a bottleneck,
+            I remove it. I build models, dashboards, pipelines, and automation
+            that people actually use.
+          </p>
+
+          <ul class="bullets">
+            <li><strong>Bias:</strong> ship something real, then iterate</li>
+            <li><strong>Style:</strong> simple, readable, reproducible</li>
+            <li><strong>Strength:</strong> turning “we should…” into “it’s done.”</li>
+          </ul>
+        </section>
+
+        <section class="card" id="projects">
+          <div class="section-head">
+            <h2>Selected Work</h2>
+            <p class="section-sub">
+              A few representative builds (placeholder projects for now).
+            </p>
+          </div>
+
+          <div class="grid">
+            <article class="proj">
+              <div class="proj-top">
+                <h3>Insight Engine</h3>
+                <span class="tag">Analytics</span>
+              </div>
+              <p>
+                A lightweight system that turns raw data into weekly “what changed
+                and why” narratives with drill-down links.
+              </p>
+              <p class="stack">
+                <span>Python</span><span>SQL</span><span>Time-series</span>
+              </p>
+              <div class="links">
+                <a href="#" aria-disabled="true" title="Add link later">Case study (soon)</a>
+                <a href="#" aria-disabled="true" title="Add link later">Code (soon)</a>
+              </div>
+            </article>
+
+            <article class="proj">
+              <div class="proj-top">
+                <h3>Forecast Toolkit</h3>
+                <span class="tag">Modeling</span>
+              </div>
+              <p>
+                A reusable forecasting framework with clean configs, backtesting,
+                and uncertainty estimates — built to swap models without rewrites.
+              </p>
+              <p class="stack">
+                <span>Stats</span><span>ML</span><span>Backtests</span>
+              </p>
+              <div class="links">
+                <a href="#" aria-disabled="true" title="Add link later">Demo (soon)</a>
+                <a href="#" aria-disabled="true" title="Add link later">Write-up (soon)</a>
+              </div>
+            </article>
+
+            <article class="proj">
+              <div class="proj-top">
+                <h3>Automation Ops</h3>
+                <span class="tag">Systems</span>
+              </div>
+              <p>
+                A set of automations that monitors data quality, alerts on breaks,
+                and generates “fix-this-first” checklists for non-technical teams.
+              </p>
+              <p class="stack">
+                <span>Pipelines</span><span>Monitoring</span><span>Alerts</span>
+              </p>
+              <div class="links">
+                <a href="#" aria-disabled="true" title="Add link later">Overview (soon)</a>
+                <a href="#" aria-disabled="true" title="Add link later">Screenshots (soon)</a>
+              </div>
+            </article>
+
+            <article class="proj">
+              <div class="proj-top">
+                <h3>Decision Dashboard</h3>
+                <span class="tag">Product</span>
+              </div>
+              <p>
+                A clean dashboard that answers leadership questions in 30 seconds:
+                trends, drivers, and the next action — no clutter.
+              </p>
+              <p class="stack">
+                <span>BI</span><span>UX</span><span>Metrics</span>
+              </p>
+              <div class="links">
+                <a href="#" aria-disabled="true" title="Add link later">Walkthrough (soon)</a>
+                <a href="#" aria-disabled="true" title="Add link later">Spec (soon)</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="card" id="contact">
+          <h2>Contact</h2>
+          <p>
+            Best way to reach me:
+            <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a>
+          </p>
+
+          <div class="contact-links">
+            <a class="pill" href="https://github.com/hunterrohwer" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="pill" href="#" aria-disabled="true" title="Add later">LinkedIn (add)</a>
+            <a class="pill" href="#" aria-disabled="true" title="Add later">Resume (add)</a>
+          </div>
+
+          <p class="fine">
+            Built with plain HTML/CSS. Simple on purpose.
+          </p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>© <span id="year"></span> Hunter Rohwer</span>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
+
