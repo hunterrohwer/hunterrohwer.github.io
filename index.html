@@ -4,35 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hunter Rohwer</title>
+  <meta name="description" content="Hunter Rohwer — Data Scientist & Builder." />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
   <!-- Zig-zag ridge header -->
-  <div class="ridge">
-    <svg viewBox="0 0 1200 160" preserveAspectRatio="none">
-      <!-- Back layers -->
-      <polyline class="ridge back b1"
-        points="0,90 120,70 240,90 360,65 480,95 600,70 720,95 840,70 960,90 1080,65 1200,85" />
-      <polyline class="ridge back b2"
-        points="0,100 120,80 240,100 360,75 480,105 600,80 720,105 840,80 960,100 1080,75 1200,95" />
-
-      <!-- Main ridge -->
-      <polyline class="ridge main"
-        points="0,80 120,60 240,80 360,55 480,85 600,60 720,85 840,60 960,80 1080,55 1200,75" />
-
-      <!-- Data-style series -->
-      <polyline class="ridge data"
-        points="0,110 120,95 240,110 360,92 480,115 600,95 720,115 840,95 960,110 1080,92 1200,108" />
-
-      <!-- Nodes -->
-      <g class="nodes">
-        <circle cx="240" cy="80" r="4"/>
-        <circle cx="480" cy="85" r="4"/>
-        <circle cx="720" cy="85" r="4"/>
-        <circle cx="960" cy="80" r="4"/>
-      </g>
+  <div class="ridge" aria-hidden="true">
+    <svg viewBox="0 0 1200 220" preserveAspectRatio="none">
+      <!-- Big layered ridgelines (no dots, no dashes) -->
+      <polyline class="ridge-line layer l4"
+        points="0,135 140,110 280,135 420,105 560,140 700,112 840,145 980,112 1120,140 1200,125" />
+      <polyline class="ridge-line layer l3"
+        points="0,128 140,103 280,128 420,98 560,133 700,105 840,138 980,105 1120,133 1200,118" />
+      <polyline class="ridge-line layer l2"
+        points="0,120 140,95 280,120 420,90 560,125 700,97 840,130 980,97 1120,125 1200,110" />
+      <polyline class="ridge-line layer l1"
+        points="0,110 140,85 280,110 420,80 560,115 700,87 840,120 980,87 1120,115 1200,100" />
     </svg>
   </div>
 
@@ -55,8 +44,9 @@
         <a class="btn ghost" href="#contact">Contact</a>
       </div>
     </header>
+
+    <!-- You can add your sections back below when ready -->
   </div>
 
 </body>
 </html>
-
