@@ -6,7 +6,7 @@
     <title>Hunter Rohwer</title>
     <meta
       name="description"
-      content="Hunter Rohwer — Data Scientist & Builder. I ship clean, practical tools and models."
+      content="Hunter Rohwer — Data Scientist & Builder. I build clean tools that make decisions easier."
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -14,25 +14,57 @@
   <body>
     <!-- Top ridgeline: mountains + data graph vibe -->
     <div class="ridge" aria-hidden="true">
-      <svg viewBox="0 0 1200 140" preserveAspectRatio="none">
-        <!-- soft sky fill -->
-        <path class="ridge-fill"
-          d="M0,70 C80,40 140,90 220,62 C300,34 360,92 450,60 C540,28 610,98 700,64 C790,30 860,92 950,58 C1040,24 1110,84 1200,56 L1200,140 L0,140 Z" />
-    
-        <!-- main ridgeline stroke -->
-        <path class="ridge-line"
-          d="M0,70 C80,40 140,90 220,62 C300,34 360,92 450,60 C540,28 610,98 700,64 C790,30 860,92 950,58 C1040,24 1110,84 1200,56" />
-    
-        <!-- secondary line for “data series” feel -->
-        <path class="ridge-line2"
-          d="M0,88 C90,76 140,106 230,86 C320,66 370,112 460,90 C550,70 610,120 700,92 C790,64 860,118 950,90 C1040,62 1110,104 1200,82" />
-    
-        <!-- tiny points (subtle graph nodes) -->
-        <g class="ridge-dots">
-          <circle cx="220" cy="62" r="3"/>
-          <circle cx="450" cy="60" r="3"/>
-          <circle cx="700" cy="64" r="3"/>
-          <circle cx="950" cy="58" r="3"/>
+      <svg viewBox="0 0 1200 160" preserveAspectRatio="none">
+        <!-- background wash -->
+        <defs>
+          <linearGradient id="ridgeWash" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="rgba(61, 131, 170, 0.22)"></stop>
+            <stop offset="100%" stop-color="rgba(244, 239, 230, 0)"></stop>
+          </linearGradient>
+
+          <!-- very subtle shadow under ridge -->
+          <filter id="softShadow" x="-10%" y="-10%" width="120%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(22,35,30,0.18)" />
+          </filter>
+        </defs>
+
+        <rect x="0" y="0" width="1200" height="160" fill="url(#ridgeWash)"></rect>
+
+        <!-- far mountains (soft) -->
+        <path class="ridge-far"
+          d="M0,95
+             C90,68 150,120 240,92
+             C330,64 390,126 480,94
+             C570,62 640,128 730,96
+             C820,64 890,122 980,90
+             C1070,58 1130,108 1200,86
+             L1200,160 L0,160 Z" />
+
+        <!-- main ridgeline (mountains + graph) -->
+        <path class="ridge-main"
+          d="M0,78
+             C85,46 150,105 235,74
+             C320,43 395,108 480,72
+             C565,36 640,116 725,78
+             C810,40 885,110 970,72
+             C1055,35 1120,96 1200,62"
+          filter="url(#softShadow)" />
+
+        <!-- secondary "data series" line (dashed) -->
+        <path class="ridge-series"
+          d="M0,106
+             C100,92 145,120 245,104
+             C345,88 390,130 490,112
+             C590,94 645,138 745,114
+             C845,90 890,138 990,112
+             C1090,86 1135,122 1200,102" />
+
+        <!-- a few subtle nodes -->
+        <g class="ridge-nodes">
+          <circle cx="235" cy="74" r="3.5"></circle>
+          <circle cx="480" cy="72" r="3.5"></circle>
+          <circle cx="725" cy="78" r="3.5"></circle>
+          <circle cx="970" cy="72" r="3.5"></circle>
         </g>
       </svg>
     </div>
@@ -40,10 +72,11 @@
     <div class="wrap">
       <header class="hero">
         <div class="badge">Available for interesting problems</div>
+
         <h1>Hunter Rohwer</h1>
 
         <p class="subtitle">
-          Data Scientist & Builder — I turn messy data into useful tools, fast.
+          Data Scientist & Builder — I build clean tools that make decisions easier.
         </p>
 
         <div class="meta">
@@ -78,81 +111,75 @@
         <section class="card" id="projects">
           <div class="section-head">
             <h2>Selected Work</h2>
-            <p class="section-sub">
-              A few representative builds (placeholder projects for now).
-            </p>
+            <p class="section-sub">Representative builds (placeholders for now).</p>
           </div>
 
           <div class="grid">
             <article class="proj">
               <div class="proj-top">
-                <h3>Insight Engine</h3>
-                <span class="tag">Analytics</span>
+                <h3>Signal Brief</h3>
+                <span class="tag t-green">Analytics</span>
               </div>
               <p>
-                A lightweight system that turns raw data into weekly “what changed
-                and why” narratives with drill-down links.
+                Turns raw data into a weekly “what changed / why it matters” brief with drill-downs.
               </p>
               <p class="stack">
                 <span>Python</span><span>SQL</span><span>Time-series</span>
               </p>
               <div class="links">
-                <a href="#" aria-disabled="true" title="Add link later">Case study (soon)</a>
-                <a href="#" aria-disabled="true" title="Add link later">Code (soon)</a>
+                <a href="#" aria-disabled="true" title="Add later">Case study (soon)</a>
+                <a href="#" aria-disabled="true" title="Add later">Code (soon)</a>
               </div>
             </article>
 
             <article class="proj">
               <div class="proj-top">
-                <h3>Forecast Toolkit</h3>
-                <span class="tag">Modeling</span>
+                <h3>Forecast Kit</h3>
+                <span class="tag t-blue">Modeling</span>
               </div>
               <p>
-                A reusable forecasting framework with clean configs, backtesting,
-                and uncertainty estimates — built to swap models without rewrites.
+                A reusable forecasting template with backtesting and uncertainty — built for speed.
               </p>
               <p class="stack">
                 <span>Stats</span><span>ML</span><span>Backtests</span>
               </p>
               <div class="links">
-                <a href="#" aria-disabled="true" title="Add link later">Demo (soon)</a>
-                <a href="#" aria-disabled="true" title="Add link later">Write-up (soon)</a>
+                <a href="#" aria-disabled="true" title="Add later">Demo (soon)</a>
+                <a href="#" aria-disabled="true" title="Add later">Write-up (soon)</a>
               </div>
             </article>
 
             <article class="proj">
               <div class="proj-top">
-                <h3>Automation Ops</h3>
-                <span class="tag">Systems</span>
+                <h3>Pipeline Monitor</h3>
+                <span class="tag t-sand">Systems</span>
               </div>
               <p>
-                A set of automations that monitors data quality, alerts on breaks,
-                and generates “fix-this-first” checklists for non-technical teams.
+                Data-quality checks + alerts that catch breaks early and generate a “fix-first” list.
               </p>
               <p class="stack">
                 <span>Pipelines</span><span>Monitoring</span><span>Alerts</span>
               </p>
               <div class="links">
-                <a href="#" aria-disabled="true" title="Add link later">Overview (soon)</a>
-                <a href="#" aria-disabled="true" title="Add link later">Screenshots (soon)</a>
+                <a href="#" aria-disabled="true" title="Add later">Overview (soon)</a>
+                <a href="#" aria-disabled="true" title="Add later">Screens (soon)</a>
               </div>
             </article>
 
             <article class="proj">
               <div class="proj-top">
                 <h3>Decision Dashboard</h3>
-                <span class="tag">Product</span>
+                <span class="tag t-green">Product</span>
               </div>
               <p>
-                A clean dashboard that answers leadership questions in 30 seconds:
-                trends, drivers, and the next action — no clutter.
+                A clean dashboard that answers leadership questions fast: trends, drivers, actions.
               </p>
               <p class="stack">
                 <span>BI</span><span>UX</span><span>Metrics</span>
               </p>
               <div class="links">
-                <a href="#" aria-disabled="true" title="Add link later">Walkthrough (soon)</a>
-                <a href="#" aria-disabled="true" title="Add link later">Spec (soon)</a>
+                <a href="#" aria-disabled="true" title="Add later">Walkthrough (soon)</a>
+                <a href="#" aria-disabled="true" title="Add later">Spec (soon)</a>
               </div>
             </article>
           </div>
@@ -171,9 +198,7 @@
             <a class="pill" href="#" aria-disabled="true" title="Add later">Resume (add)</a>
           </div>
 
-          <p class="fine">
-            Built in an hour with HTML, CSS, and ChatGPT
-          </p>
+          <p class="fine">Built with plain HTML/CSS. Simple on purpose.</p>
         </section>
       </main>
 
