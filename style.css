@@ -16,6 +16,71 @@
   box-sizing: border-box;
 }
 
+/* --- Ridgeline header (mountains + data graph) --- */
+.ridge {
+  width: 100%;
+  height: 130px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+
+  /* a soft band behind the ridge */
+  background:
+    linear-gradient(180deg,
+      rgba(62, 120, 168, 0.18) 0%,
+      rgba(244, 239, 228, 0) 75%);
+}
+
+.ridge svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* color palette (retro) */
+:root {
+  --ridge-blue: #3e78a8;   /* dusty blue */
+  --ridge-green: #2f5d50;  /* forest */
+  --ridge-rust: #c45a2a;   /* rust */
+  --ridge-yellow: #f2cf5b; /* warm yellow */
+}
+
+/* fills + strokes */
+.ridge-fill {
+  fill: rgba(242, 207, 91, 0.20); /* warm yellow wash */
+}
+
+.ridge-line {
+  fill: none;
+  stroke: var(--ridge-green);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ridge-line2 {
+  fill: none;
+  stroke: var(--ridge-blue);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.9;
+  stroke-dasharray: 6 10; /* subtle “data” vibe */
+}
+
+/* nodes */
+.ridge-dots circle {
+  fill: var(--ridge-rust);
+  stroke: rgba(31, 42, 36, 0.18);
+  stroke-width: 1;
+}
+
+/* Make sure your main content sits nicely under it */
+.wrap {
+  margin-top: 28px; /* add breathing room under ridge */
+}
+
+
 html, body {
   margin: 0;
   padding: 0;
