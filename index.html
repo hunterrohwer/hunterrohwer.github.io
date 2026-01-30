@@ -1,215 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hunter Rohwer</title>
-    <meta
-      name="description"
-      content="Hunter Rohwer — Data Scientist & Builder. I build clean tools that make decisions easier."
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hunter Rohwer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <body>
-    <!-- Top ridgeline: mountains + data graph vibe -->
-    <div class="ridge" aria-hidden="true">
-      <svg viewBox="0 0 1200 160" preserveAspectRatio="none">
-        <!-- background wash -->
-        <defs>
-          <linearGradient id="ridgeWash" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="rgba(61, 131, 170, 0.22)"></stop>
-            <stop offset="100%" stop-color="rgba(244, 239, 230, 0)"></stop>
-          </linearGradient>
+<body>
 
-          <!-- very subtle shadow under ridge -->
-          <filter id="softShadow" x="-10%" y="-10%" width="120%" height="140%">
-            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(22,35,30,0.18)" />
-          </filter>
-        </defs>
+  <!-- Zig-zag ridge header -->
+  <div class="ridge">
+    <svg viewBox="0 0 1200 160" preserveAspectRatio="none">
+      <!-- Back layers -->
+      <polyline class="ridge back b1"
+        points="0,90 120,70 240,90 360,65 480,95 600,70 720,95 840,70 960,90 1080,65 1200,85" />
+      <polyline class="ridge back b2"
+        points="0,100 120,80 240,100 360,75 480,105 600,80 720,105 840,80 960,100 1080,75 1200,95" />
 
-        <rect x="0" y="0" width="1200" height="160" fill="url(#ridgeWash)"></rect>
+      <!-- Main ridge -->
+      <polyline class="ridge main"
+        points="0,80 120,60 240,80 360,55 480,85 600,60 720,85 840,60 960,80 1080,55 1200,75" />
 
-        <!-- far mountains (soft) -->
-        <path class="ridge-far"
-          d="M0,95
-             C90,68 150,120 240,92
-             C330,64 390,126 480,94
-             C570,62 640,128 730,96
-             C820,64 890,122 980,90
-             C1070,58 1130,108 1200,86
-             L1200,160 L0,160 Z" />
+      <!-- Data-style series -->
+      <polyline class="ridge data"
+        points="0,110 120,95 240,110 360,92 480,115 600,95 720,115 840,95 960,110 1080,92 1200,108" />
 
-        <!-- main ridgeline (mountains + graph) -->
-        <path class="ridge-main"
-          d="M0,78
-             C85,46 150,105 235,74
-             C320,43 395,108 480,72
-             C565,36 640,116 725,78
-             C810,40 885,110 970,72
-             C1055,35 1120,96 1200,62"
-          filter="url(#softShadow)" />
+      <!-- Nodes -->
+      <g class="nodes">
+        <circle cx="240" cy="80" r="4"/>
+        <circle cx="480" cy="85" r="4"/>
+        <circle cx="720" cy="85" r="4"/>
+        <circle cx="960" cy="80" r="4"/>
+      </g>
+    </svg>
+  </div>
 
-        <!-- secondary "data series" line (dashed) -->
-        <path class="ridge-series"
-          d="M0,106
-             C100,92 145,120 245,104
-             C345,88 390,130 490,112
-             C590,94 645,138 745,114
-             C845,90 890,138 990,112
-             C1090,86 1135,122 1200,102" />
+  <div class="wrap">
+    <header class="hero">
+      <span class="badge">Available for interesting problems</span>
 
-        <!-- a few subtle nodes -->
-        <g class="ridge-nodes">
-          <circle cx="235" cy="74" r="3.5"></circle>
-          <circle cx="480" cy="72" r="3.5"></circle>
-          <circle cx="725" cy="78" r="3.5"></circle>
-          <circle cx="970" cy="72" r="3.5"></circle>
-        </g>
-      </svg>
-    </div>
+      <h1>Hunter Rohwer</h1>
 
-    <div class="wrap">
-      <header class="hero">
-        <div class="badge">Available for interesting problems</div>
+      <p class="subtitle">
+        Data Scientist & Builder — I build clean tools that make decisions easier.
+      </p>
 
-        <h1>Hunter Rohwer</h1>
+      <p class="meta">
+        Denver, CO · Python · SQL · Modeling · Automation
+      </p>
 
-        <p class="subtitle">
-          Data Scientist & Builder — I build clean tools that make decisions easier.
-        </p>
+      <div class="cta">
+        <a class="btn" href="#projects">See projects</a>
+        <a class="btn ghost" href="#contact">Contact</a>
+      </div>
+    </header>
+  </div>
 
-        <div class="meta">
-          <span>Denver, CO</span>
-          <span class="dot">•</span>
-          <span>Python • SQL • Modeling • Automation</span>
-        </div>
-
-        <div class="cta">
-          <a class="btn" href="#projects">See projects</a>
-          <a class="btn ghost" href="#contact">Contact</a>
-        </div>
-      </header>
-
-      <main>
-        <section class="card" id="about">
-          <h2>About</h2>
-          <p>
-            I’m a practical, hands-on data scientist who likes ownership.
-            If there’s ambiguity, I create clarity. If there’s a bottleneck,
-            I remove it. I build models, dashboards, pipelines, and automation
-            that people actually use.
-          </p>
-
-          <ul class="bullets">
-            <li><strong>Bias:</strong> ship something real, then iterate</li>
-            <li><strong>Style:</strong> simple, readable, reproducible</li>
-            <li><strong>Strength:</strong> turning “we should…” into “it’s done.”</li>
-          </ul>
-        </section>
-
-        <section class="card" id="projects">
-          <div class="section-head">
-            <h2>Selected Work</h2>
-            <p class="section-sub">Representative builds (placeholders for now).</p>
-          </div>
-
-          <div class="grid">
-            <article class="proj">
-              <div class="proj-top">
-                <h3>Signal Brief</h3>
-                <span class="tag t-green">Analytics</span>
-              </div>
-              <p>
-                Turns raw data into a weekly “what changed / why it matters” brief with drill-downs.
-              </p>
-              <p class="stack">
-                <span>Python</span><span>SQL</span><span>Time-series</span>
-              </p>
-              <div class="links">
-                <a href="#" aria-disabled="true" title="Add later">Case study (soon)</a>
-                <a href="#" aria-disabled="true" title="Add later">Code (soon)</a>
-              </div>
-            </article>
-
-            <article class="proj">
-              <div class="proj-top">
-                <h3>Forecast Kit</h3>
-                <span class="tag t-blue">Modeling</span>
-              </div>
-              <p>
-                A reusable forecasting template with backtesting and uncertainty — built for speed.
-              </p>
-              <p class="stack">
-                <span>Stats</span><span>ML</span><span>Backtests</span>
-              </p>
-              <div class="links">
-                <a href="#" aria-disabled="true" title="Add later">Demo (soon)</a>
-                <a href="#" aria-disabled="true" title="Add later">Write-up (soon)</a>
-              </div>
-            </article>
-
-            <article class="proj">
-              <div class="proj-top">
-                <h3>Pipeline Monitor</h3>
-                <span class="tag t-sand">Systems</span>
-              </div>
-              <p>
-                Data-quality checks + alerts that catch breaks early and generate a “fix-first” list.
-              </p>
-              <p class="stack">
-                <span>Pipelines</span><span>Monitoring</span><span>Alerts</span>
-              </p>
-              <div class="links">
-                <a href="#" aria-disabled="true" title="Add later">Overview (soon)</a>
-                <a href="#" aria-disabled="true" title="Add later">Screens (soon)</a>
-              </div>
-            </article>
-
-            <article class="proj">
-              <div class="proj-top">
-                <h3>Decision Dashboard</h3>
-                <span class="tag t-green">Product</span>
-              </div>
-              <p>
-                A clean dashboard that answers leadership questions fast: trends, drivers, actions.
-              </p>
-              <p class="stack">
-                <span>BI</span><span>UX</span><span>Metrics</span>
-              </p>
-              <div class="links">
-                <a href="#" aria-disabled="true" title="Add later">Walkthrough (soon)</a>
-                <a href="#" aria-disabled="true" title="Add later">Spec (soon)</a>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="card" id="contact">
-          <h2>Contact</h2>
-          <p>
-            Best way to reach me:
-            <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a>
-          </p>
-
-          <div class="contact-links">
-            <a class="pill" href="https://github.com/hunterrohwer" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="pill" href="#" aria-disabled="true" title="Add later">LinkedIn (add)</a>
-            <a class="pill" href="#" aria-disabled="true" title="Add later">Resume (add)</a>
-          </div>
-
-          <p class="fine">Built with plain HTML/CSS. Simple on purpose.</p>
-        </section>
-      </main>
-
-      <footer class="footer">
-        <span>© <span id="year"></span> Hunter Rohwer</span>
-      </footer>
-    </div>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+</body>
 </html>
 
