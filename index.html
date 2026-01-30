@@ -12,6 +12,31 @@
   </head>
 
   <body>
+    <!-- Top ridgeline: mountains + data graph vibe -->
+    <div class="ridge" aria-hidden="true">
+      <svg viewBox="0 0 1200 140" preserveAspectRatio="none">
+        <!-- soft sky fill -->
+        <path class="ridge-fill"
+          d="M0,70 C80,40 140,90 220,62 C300,34 360,92 450,60 C540,28 610,98 700,64 C790,30 860,92 950,58 C1040,24 1110,84 1200,56 L1200,140 L0,140 Z" />
+    
+        <!-- main ridgeline stroke -->
+        <path class="ridge-line"
+          d="M0,70 C80,40 140,90 220,62 C300,34 360,92 450,60 C540,28 610,98 700,64 C790,30 860,92 950,58 C1040,24 1110,84 1200,56" />
+    
+        <!-- secondary line for “data series” feel -->
+        <path class="ridge-line2"
+          d="M0,88 C90,76 140,106 230,86 C320,66 370,112 460,90 C550,70 610,120 700,92 C790,64 860,118 950,90 C1040,62 1110,104 1200,82" />
+    
+        <!-- tiny points (subtle graph nodes) -->
+        <g class="ridge-dots">
+          <circle cx="220" cy="62" r="3"/>
+          <circle cx="450" cy="60" r="3"/>
+          <circle cx="700" cy="64" r="3"/>
+          <circle cx="950" cy="58" r="3"/>
+        </g>
+      </svg>
+    </div>
+
     <div class="wrap">
       <header class="hero">
         <div class="badge">Available for interesting problems</div>
