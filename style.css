@@ -6,8 +6,10 @@
   --green: #2f5d50;
   --blue:  #3d83aa;
   --sage:  #9fb8a8;
-  --sea:   #77a7b2;   /* soft blue-green */
-  --sun:   #f1d27a;   /* warm yellow */
+  --sun:   #f1d27a;
+
+  /* Set this to match the "bottom ridge" vibe */
+  --page-bg: #f1d27a; /* same as --sun by default */
 
   --line: rgba(31,42,36,0.16);
   --shadow: rgba(31,42,36,0.12);
@@ -20,37 +22,44 @@ body {
   margin: 0;
   color: var(--ink);
 
-  /* paper texture */
+  /* Make the whole page feel like it continues down from the bottom ridge */
   background:
-    radial-gradient(900px 520px at 18% 10%, rgba(61,131,170,0.10) 0%, rgba(61,131,170,0) 60%),
-    radial-gradient(900px 520px at 86% 2%, rgba(47,93,80,0.12) 0%, rgba(47,93,80,0) 58%),
-    linear-gradient(180deg, rgba(241,210,122,0.12) 0%, rgba(244,239,230,0) 22%),
     repeating-linear-gradient(
       135deg,
-      rgba(31,42,36,0.022) 0px,
-      rgba(31,42,36,0.022) 3px,
+      rgba(31,42,36,0.02) 0px,
+      rgba(31,42,36,0.02) 3px,
       rgba(0,0,0,0) 8px,
       rgba(0,0,0,0) 13px
     ),
-    var(--paper);
+    var(--page-bg);
 
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
 }
 
 /* ===== Ridge ===== */
 .ridge {
-  height: 190px; /* bigger */
-  overflow: hidden;
+  height: 190px;
+  overflow: hidden; /* clips drifting SVG */
+  position: relative;
 
-  /* soft band behind ridge */
+  /* Soft atmospheric band at top */
   background:
-    linear-gradient(180deg, rgba(61,131,170,0.16), rgba(244,239,230,0));
+    linear-gradient(180deg, rgba(61,131,170,0.18), rgba(241,210,122,0.0));
 }
 
-.ridge svg {
-  width: 100%;
+/* Make SVG wider than viewport visually (overscan) */
+.ridge-svg {
+  width: 120%;
   height: 100%;
   display: block;
+  margin-left: -10%;
+}
+
+/* Optional depth image */
+.ridge-img {
+  opacity: 0.25;         /* keep it subtle */
+  filter: blur(0.4px);   /* soften */
+  mix-blend-mode: multiply;
 }
 
 /* Thick stacked lines */
@@ -58,44 +67,36 @@ body {
   fill: none;
   stroke-linejoin: bevel;
   stroke-linecap: square;
-  stroke-width: 18; /* thick */
+
+  /* thicker */
+  stroke-width: 26;
   vector-effect: non-scaling-stroke;
 }
 
-/* Color layers (green/blue/yellow accents) */
+/* Colors */
 .l1 { stroke: var(--green); }
-.l2 { stroke: var(--blue);  opacity: 0.85; }
-.l3 { stroke: var(--sage);  opacity: 0.65; }
-.l4 { stroke: var(--sun);   opacity: 0.45; }
+.l2 { stroke: var(--blue); opacity: 0.85; }
+.l3 { stroke: var(--sage); opacity: 0.70; }
 
-/* --- Animation: draw-in + subtle drift --- */
-.layer {
-  stroke-dasharray: 2400;
-  stroke-dashoffset: 2400;
-  animation: draw 1200ms ease-out forwards, drift 5200ms ease-in-out 1200ms infinite;
-  filter: drop-shadow(0 2px 1px rgba(31,42,36,0.12));
+/* bottom layer (same as page bg so it blends into the page) */
+.l4 { stroke: var(--page-bg); opacity: 1; }
+
+/* ---- Animation: very slow, subtle drift ---- */
+/* We drift the whole group, not each line separately, so it feels cohesive */
+.ridge-drift {
+  animation: drift 48s ease-in-out infinite;
+  filter: drop-shadow(0 3px 2px rgba(31,42,36,0.10));
 }
 
-.l2 { animation-delay: 80ms, 1280ms; }
-.l3 { animation-delay: 140ms, 1340ms; }
-.l4 { animation-delay: 200ms, 1400ms; }
-
-@keyframes draw {
-  to { stroke-dashoffset: 0; }
-}
-
+/* Barely moving — "is it moving?" */
 @keyframes drift {
   0%, 100% { transform: translateX(0px); }
-  50%      { transform: translateX(-18px); }
+  50%      { transform: translateX(-22px); }
 }
 
 /* Reduce motion accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .layer {
-    animation: none;
-    stroke-dasharray: none;
-    stroke-dashoffset: 0;
-  }
+  .ridge-drift { animation: none; }
 }
 
 /* ===== Content ===== */
@@ -116,7 +117,7 @@ body {
 /* Badge */
 .badge {
   display: inline-block;
-  background: #e7dcc6;
+  background: rgba(231,220,198,0.9);
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 7px 12px;
@@ -138,7 +139,7 @@ h1::after {
   height: 7px;
   margin-top: 14px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--green), var(--blue), var(--sun));
+  background: linear-gradient(90deg, var(--green), var(--blue), var(--page-bg));
   opacity: 0.95;
 }
 
@@ -189,6 +190,7 @@ h1::after {
 
 /* Mobile */
 @media (max-width: 780px) {
-  .ridge { height: 160px; }
+  .ridge { height: 170px; }
+  .ridge-svg { width: 135%; margin-left: -17.5%; } /* more overscan on small screens */
   h1 { font-size: 2.6rem; }
 }
