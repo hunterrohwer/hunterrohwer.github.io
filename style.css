@@ -167,12 +167,13 @@ h1 {
 h1::after {
   content: "";
   display: block;
-  width: 96px;
+  width: 110px;
   height: 5px;
   margin-top: 14px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--forest), var(--rust), var(--sky));
+  background: linear-gradient(90deg, var(--ridge-green), var(--ridge-rust), var(--ridge-yellow), var(--ridge-blue));
 }
+
 
 .subtitle {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
