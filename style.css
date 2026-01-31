@@ -14,6 +14,7 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -23,12 +24,18 @@ body {
 
 /* ---------- TOP BAR ---------- */
 .topbar {
+  background: var(--g1);
+  color: #fff;
+  padding: 14px 0;
+}
+
+.topbar-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--g1);
-  color: #fff;
-  padding: 14px 28px;
 }
 
 .brand {
@@ -53,20 +60,24 @@ body {
   font-size: 14px;
 }
 
-/* ---------- STRIPES ---------- */
+/* ---------- GRADIENT STRIPES (MIDDLE ONLY) ---------- */
 .ridge {
   width: 100%;
 }
 
-.vstripe {
+.stripe {
   width: 100%;
 }
 
-/* thickness + colors, top → bottom */
-.v1 { height: 18px; background: var(--g1); }
-.v2 { height: 14px; background: var(--g2); }
-.v3 { height: 12px; background: var(--g3); }
-.v4 { height: 20px; background: var(--g4); }
+.mid1 {
+  height: 18px;
+  background: var(--g2);
+}
+
+.mid2 {
+  height: 18px;
+  background: var(--g3);
+}
 
 /* ---------- PAGE ---------- */
 .page {
@@ -118,6 +129,7 @@ h1 {
 .actions {
   margin-top: 16px;
 }
+
 .btn {
   display: inline-block;
   padding: 8px 14px;
@@ -128,6 +140,7 @@ h1 {
   background: var(--paper);
   font-weight: 700;
 }
+
 .btn.primary {
   background: var(--g3);
 }
@@ -168,6 +181,7 @@ h2 {
 .tags {
   margin-top: 16px;
 }
+
 .tags span {
   display: inline-block;
   border: 2px solid var(--border);
