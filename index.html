@@ -18,13 +18,15 @@
       <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#notes">Notes</a>
+        <a href="#visuals">Visuals</a>
         <a href="#contact">Contact</a>
         <a href="https://github.com/" target="_blank">GitHub ↗</a>
       </nav>
     </div>
   </header>
 
-  <!-- HORIZONTAL GRADIENT BANDS (ONLY THE MIDDLE TWO) -->
+  <!-- GRADIENT STRIPES (MIDDLE ONLY) -->
   <div class="ridge" aria-hidden="true">
     <div class="stripe mid1"></div>
     <div class="stripe mid2"></div>
@@ -83,38 +85,210 @@
 
     <!-- PROJECTS -->
     <section id="projects" class="card">
-      <div class="projects-header">
+      <div class="section-header">
         <h2>Projects</h2>
         <span class="note">Placeholders for now — swap with real links later.</span>
       </div>
 
-      <div class="projects">
-        <div class="project">
-          <h3>Forecast Kit</h3>
-          <p>
-            Reusable forecasting template with backtests and uncertainty bands.
-          </p>
-          <div class="tags small">
-            <span>Time Series</span>
-            <span>Stats</span>
-            <span>Python</span>
-            <span>Write-up</span>
-            <span>Code</span>
+      <div class="projects-wide">
+        <article class="project-wide">
+          <div class="project-main">
+            <h3>Signal Dashboard</h3>
+            <p>
+              A clean, fast dashboard that turns messy data into a weekly decision view.
+              Includes QA checks, trend callouts, and reproducible pipelines.
+            </p>
+
+            <div class="tags small">
+              <span>Python</span>
+              <span>SQL</span>
+              <span>Dashboards</span>
+              <span>Monitoring</span>
+              <span>Write-up</span>
+            </div>
+
+            <div class="project-links">
+              <a class="mini-link" href="#">Overview</a>
+              <a class="mini-link" href="#">Code</a>
+              <a class="mini-link" href="#">Demo</a>
+            </div>
           </div>
+
+          <div class="project-media" aria-label="Project illustration placeholder">
+            <div class="media-box">
+              <div class="media-label">ILLUSTRATION</div>
+              <div class="media-sub">Placeholder image</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-wide">
+          <div class="project-main">
+            <h3>Forecast Kit</h3>
+            <p>
+              Reusable forecasting template with backtests and uncertainty bands.
+              Built to be swapped across datasets with minimal changes.
+            </p>
+
+            <div class="tags small">
+              <span>Time Series</span>
+              <span>Stats</span>
+              <span>Python</span>
+              <span>Docs</span>
+              <span>Code</span>
+            </div>
+
+            <div class="project-links">
+              <a class="mini-link" href="#">Overview</a>
+              <a class="mini-link" href="#">Code</a>
+              <a class="mini-link" href="#">Notebook</a>
+            </div>
+          </div>
+
+          <div class="project-media" aria-label="Project illustration placeholder">
+            <div class="media-box">
+              <div class="media-label">ILLUSTRATION</div>
+              <div class="media-sub">Placeholder image</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-wide">
+          <div class="project-main">
+            <h3>Pipeline Monitor</h3>
+            <p>
+              Data quality checks + alerting that generates a fix-first list.
+              Designed for reliability: quick triage, clear logs, and ownership.
+            </p>
+
+            <div class="tags small">
+              <span>ETL</span>
+              <span>Monitoring</span>
+              <span>SQL</span>
+              <span>Alerts</span>
+              <span>Ops</span>
+            </div>
+
+            <div class="project-links">
+              <a class="mini-link" href="#">Overview</a>
+              <a class="mini-link" href="#">Screens</a>
+              <a class="mini-link" href="#">Write-up</a>
+            </div>
+          </div>
+
+          <div class="project-media" aria-label="Project illustration placeholder">
+            <div class="media-box">
+              <div class="media-label">ILLUSTRATION</div>
+              <div class="media-sub">Placeholder image</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- NOTES (better than "Thoughts") -->
+    <section id="notes" class="card">
+      <div class="section-header">
+        <h2>Notes</h2>
+        <span class="note">Short posts: what I’m learning, building, and noticing.</span>
+      </div>
+
+      <div class="posts">
+        <article class="post">
+          <div class="post-top">
+            <h3>Shipping beats perfect</h3>
+            <span class="post-meta">Jan 2026 · 3 min</span>
+          </div>
+          <p>
+            A quick framework I use to turn a vague request into something shippable
+            in a weekend — without overengineering.
+          </p>
+          <a class="mini-link" href="#">Read</a>
+        </article>
+
+        <article class="post">
+          <div class="post-top">
+            <h3>How I sanity-check data fast</h3>
+            <span class="post-meta">Jan 2026 · 4 min</span>
+          </div>
+          <p>
+            My go-to checklist for verifying a dataset before modeling: shape, drift,
+            missingness, and what “normal” looks like.
+          </p>
+          <a class="mini-link" href="#">Read</a>
+        </article>
+
+        <article class="post">
+          <div class="post-top">
+            <h3>Simple monitoring that actually helps</h3>
+            <span class="post-meta">Jan 2026 · 5 min</span>
+          </div>
+          <p>
+            Alerts aren’t useful unless they tell you exactly what to do next.
+            Here’s how I structure “fix-first” signals.
+          </p>
+          <a class="mini-link" href="#">Read</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- VISUALS / ILLUSTRATIONS -->
+    <section id="visuals" class="card">
+      <div class="section-header">
+        <h2>Visuals</h2>
+        <span class="note">Posters, diagrams, sketches — visuals that support the work.</span>
+      </div>
+
+      <div class="visual-grid">
+        <div class="visual">
+          <div class="visual-box">
+            <div class="media-label">IMAGE</div>
+            <div class="media-sub">Poster / print</div>
+          </div>
+          <div class="visual-caption">Minimal poster series (placeholder)</div>
         </div>
 
-        <div class="project">
-          <h3>Pipeline Monitor</h3>
-          <p>
-            Data quality checks + alerting that generates a fix-first list.
-          </p>
-          <div class="tags small">
-            <span>ETL</span>
-            <span>Monitoring</span>
-            <span>SQL</span>
-            <span>Screens</span>
+        <div class="visual">
+          <div class="visual-box">
+            <div class="media-label">IMAGE</div>
+            <div class="media-sub">Diagram</div>
           </div>
+          <div class="visual-caption">Pipeline diagram set (placeholder)</div>
         </div>
+
+        <div class="visual">
+          <div class="visual-box">
+            <div class="media-label">IMAGE</div>
+            <div class="media-sub">Sketch</div>
+          </div>
+          <div class="visual-caption">Sketchbook snapshots (placeholder)</div>
+        </div>
+
+        <div class="visual">
+          <div class="visual-box">
+            <div class="media-label">IMAGE</div>
+            <div class="media-sub">UI mock</div>
+          </div>
+          <div class="visual-caption">UI layout explorations (placeholder)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (placeholder section so nav works) -->
+    <section id="contact" class="card">
+      <div class="section-header">
+        <h2>Contact</h2>
+        <span class="note">Add email + links later.</span>
+      </div>
+
+      <p>
+        Easiest: add an email link and a LinkedIn link here when ready.
+      </p>
+
+      <div class="tags">
+        <span>email@domain.com</span>
+        <span>LinkedIn</span>
+        <span>GitHub</span>
       </div>
     </section>
 
