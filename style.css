@@ -55,19 +55,18 @@ body {
 
 /* ---------- STRIPES ---------- */
 .ridge {
-  display: flex;
-  height: 64px;
   width: 100%;
 }
 
 .vstripe {
-  flex: 1;
+  width: 100%;
 }
 
-.v1 { background: var(--g1); }
-.v2 { background: var(--g2); }
-.v3 { background: var(--g3); }
-.v4 { background: var(--g4); }
+/* thickness + colors, top → bottom */
+.v1 { height: 18px; background: var(--g1); }
+.v2 { height: 14px; background: var(--g2); }
+.v3 { height: 12px; background: var(--g3); }
+.v4 { height: 20px; background: var(--g4); }
 
 /* ---------- PAGE ---------- */
 .page {
