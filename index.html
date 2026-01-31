@@ -1,252 +1,95 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hunter Rohwer</title>
-    <meta name="description" content="Personal site for Hunter Rohwer — data scientist, projects, and writing." />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hunter Rohwer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-  <body>
-    <!-- Top nav -->
-    <header class="topbar">
-      <div class="container topbar__inner">
-        <a class="brand" href="#top">
-          <span class="brand__mark">HR</span>
-          <span class="brand__name">Hunter Rohwer</span>
-        </a>
-
-        <nav class="nav">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#writing">Writing</a>
-          <a class="btn btn--small" href="#contact">Contact</a>
-        </nav>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <div class="brand">Hunter Rohwer</div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <!-- Hero -->
-    <main id="top" class="hero">
-      <!-- Decorative mountain/graph layer -->
-      <div class="hero__art" aria-hidden="true">
-        <div class="mountains">
-          <!-- Back layer -->
-          <svg class="mountains__layer mountains__layer--back" viewBox="0 0 1200 320" preserveAspectRatio="none">
-            <path d="M0,240 L120,210 L240,235 L360,185 L480,210 L600,160 L720,205 L840,175 L960,215 L1080,190 L1200,230 L1200,320 L0,320 Z"></path>
-          </svg>
-
-          <!-- Mid layer -->
-          <svg class="mountains__layer mountains__layer--mid" viewBox="0 0 1200 320" preserveAspectRatio="none">
-            <path d="M0,260 L140,230 L260,250 L380,210 L520,235 L650,190 L780,225 L910,200 L1040,235 L1200,210 L1200,320 L0,320 Z"></path>
-          </svg>
-
-          <!-- Front layer (this color also becomes the page background) -->
-          <svg class="mountains__layer mountains__layer--front" viewBox="0 0 1200 320" preserveAspectRatio="none">
-            <path d="M0,285 L160,255 L320,275 L480,240 L640,265 L800,230 L960,260 L1120,240 L1200,255 L1200,320 L0,320 Z"></path>
-          </svg>
-
-          <!-- Graph lines on top -->
-          <svg class="graph" viewBox="0 0 1200 320" preserveAspectRatio="none">
-            <path class="graph__line" d="M-50,235 L120,210 L240,235 L360,185 L480,210 L600,160 L720,205 L840,175 L960,215 L1080,190 L1250,230" />
-            <path class="graph__line graph__line--alt" d="M-50,265 L140,230 L260,250 L380,210 L520,235 L650,190 L780,225 L910,200 L1040,235 L1250,210" />
-          </svg>
-        </div>
-      </div>
-
-      <!-- Hero content -->
-      <div class="container hero__content">
-        <p class="eyebrow">Data Scientist • Denver, CO</p>
-        <h1>Building clean models, useful tools, and fun side projects.</h1>
-        <p class="lede">
-          I work on analytics & forecasting. I like turning messy data into something people can trust —
-          then shipping it.
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Data Scientist • Denver, CO</p>
+        <h1>Simple, clean, and a little retro.</h1>
+        <p class="sub">
+          This is a quick POC layout: just enough structure to see the vibe and iterate fast.
         </p>
 
-        <div class="hero__cta">
-          <a class="btn" href="#projects">View projects</a>
-          <a class="btn btn--ghost" href="#contact">Get in touch</a>
-        </div>
-
-        <div class="pillrow" aria-label="quick links">
-          <a class="pill" href="#" title="GitHub">GitHub</a>
-          <a class="pill" href="#" title="LinkedIn">LinkedIn</a>
-          <a class="pill" href="#" title="Email">Email</a>
+        <div class="cta">
+          <a class="btn" href="#projects">Projects</a>
+          <a class="btn ghost" href="#contact">Contact</a>
         </div>
       </div>
-    </main>
 
-    <!-- Page content (background matches the front mountain layer) -->
-    <section id="about" class="section section--bg">
-      <div class="container">
-        <div class="grid grid--2">
-          <div>
-            <h2>About</h2>
-            <p>
-              Short bio goes here. Keep it crisp: what you do, what you care about, and what you’re building.
-            </p>
-            <p class="muted">
-              Example: forecasting, ML pipelines, sports analytics, and anything that blends data + design.
-            </p>
+      <!-- Simple retro "mountains" -->
+      <div class="mountains" aria-hidden="true">
+        <div class="band band-1"></div>
+        <div class="band band-2"></div>
+        <div class="band band-3"></div>
 
-            <div class="stats">
-              <div class="stat">
-                <div class="stat__num">5+</div>
-                <div class="stat__label">Years Python</div>
-              </div>
-              <div class="stat">
-                <div class="stat__num">ML</div>
-                <div class="stat__label">Modeling & Eval</div>
-              </div>
-              <div class="stat">
-                <div class="stat__num">ETL</div>
-                <div class="stat__label">Pipelines</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Focus right now</h3>
-            <ul class="list">
-              <li>Forecasting + metrics people actually use</li>
-              <li>Sports marketing analytics side projects</li>
-              <li>Clean visuals + clear writing</li>
-            </ul>
-
-            <div class="divider"></div>
-
-            <p class="muted small">
-              This card is just a placeholder block. Later: add a photo, resume link, or “now” page.
-            </p>
-          </div>
-        </div>
+        <!-- one thick "graph/mountain" line -->
+        <div class="ridge"></div>
       </div>
     </section>
 
-    <section id="projects" class="section section--bg">
-      <div class="container">
-        <div class="section__head">
-          <h2>Projects</h2>
-          <p class="muted">A few things I’m building. Keep these as small “cards” for now.</p>
-        </div>
-
-        <div class="cards">
-          <article class="card card--project">
-            <h3>Mortgage-rate forecasting</h3>
-            <p class="muted">
-              Econometric + ML framework for horizons, scenario toggles, and clean evaluation.
-            </p>
-            <div class="tags">
-              <span class="tag">Python</span>
-              <span class="tag">Statsmodels</span>
-              <span class="tag">Time Series</span>
-            </div>
-            <a class="card__link" href="#">Read more →</a>
-          </article>
-
-          <article class="card card--project">
-            <h3>Sports logo detection</h3>
-            <p class="muted">
-              YOLO pipeline for logo screen-time analytics, asset tracking, and reporting.
-            </p>
-            <div class="tags">
-              <span class="tag">Computer Vision</span>
-              <span class="tag">YOLO</span>
-              <span class="tag">Pipelines</span>
-            </div>
-            <a class="card__link" href="#">Read more →</a>
-          </article>
-
-          <article class="card card--project">
-            <h3>Personal website POC</h3>
-            <p class="muted">
-              This template — simple, fast, and easy to iterate on.
-            </p>
-            <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">Design</span>
-            </div>
-            <a class="card__link" href="#">Read more →</a>
-          </article>
-        </div>
+    <section id="about" class="section">
+      <div class="wrap">
+        <h2>About</h2>
+        <p>
+          Short bio goes here. Keep it 2–3 sentences. You can expand later.
+        </p>
       </div>
     </section>
 
-    <section id="writing" class="section section--bg">
-      <div class="container">
-        <div class="section__head">
-          <h2>Writing</h2>
-          <p class="muted">Add posts later. For now, keep it as a simple list.</p>
+    <section id="projects" class="section">
+      <div class="wrap">
+        <h2>Projects</h2>
+
+        <div class="card">
+          <h3>Project One</h3>
+          <p>One-line description.</p>
         </div>
 
         <div class="card">
-          <ul class="postlist">
-            <li>
-              <a href="#">How I evaluate forecasts without lying to myself</a>
-              <span class="muted small">• Coming soon</span>
-            </li>
-            <li>
-              <a href="#">From raw data → clean index in 7 steps</a>
-              <span class="muted small">• Coming soon</span>
-            </li>
-            <li>
-              <a href="#">NASCAR analytics: what data is actually usable</a>
-              <span class="muted small">• Coming soon</span>
-            </li>
-          </ul>
+          <h3>Project Two</h3>
+          <p>One-line description.</p>
+        </div>
+
+        <div class="card">
+          <h3>Project Three</h3>
+          <p>One-line description.</p>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section section--bg">
-      <div class="container">
-        <div class="grid grid--2">
-          <div>
-            <h2>Contact</h2>
-            <p class="muted">
-              Put your real email + links here when you’re ready. Keep it easy for people.
-            </p>
-          </div>
-
-          <form class="card form" onsubmit="return false;">
-            <label>
-              <span>Name</span>
-              <input type="text" placeholder="Your name" />
-            </label>
-
-            <label>
-              <span>Email</span>
-              <input type="email" placeholder="you@example.com" />
-            </label>
-
-            <label>
-              <span>Message</span>
-              <textarea rows="4" placeholder="What are you thinking?"></textarea>
-            </label>
-
-            <button class="btn" type="button">Send (placeholder)</button>
-            <p class="muted small">
-              Later: connect this to a service (Formspree, Netlify forms, etc.). For now it’s layout-only.
-            </p>
-          </form>
-        </div>
+    <section id="contact" class="section">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>
+          Add your email + links later. For now this is just layout.
+        </p>
+        <p class="muted">Email: you@example.com • GitHub • LinkedIn</p>
       </div>
     </section>
+  </main>
 
-    <footer class="footer section--bg">
-      <div class="container footer__inner">
-        <p class="muted small">© <span id="y"></span> Hunter Rohwer</p>
-        <div class="footer__links">
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#top">Back to top</a>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
-  </body>
+  <footer class="footer">
+    <div class="wrap">
+      <span class="muted">© 2026 Hunter Rohwer</span>
+    </div>
+  </footer>
+</body>
 </html>
