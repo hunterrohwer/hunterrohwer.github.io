@@ -4,55 +4,164 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hunter Rohwer</title>
-  <meta name="description" content="Hunter Rohwer — Data Scientist & Builder." />
+  <meta name="description" content="Hunter Rohwer — Data Scientist & Builder" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- Zig-zag ridge header -->
-  <div class="ridge" aria-hidden="true">
-    <svg class="ridge-svg" viewBox="0 0 1400 220" preserveAspectRatio="none">
-      <!-- OPTIONAL depth image behind the ridges.
-           1) Put an image file in your repo (e.g., /assets/ridge-texture.png)
-           2) Update the href below
-           Use a subtle texture (paper grain / topo lines / haze). -->
-      <image class="ridge-img" href="assets/ridge-texture.png" x="0" y="0" width="1400" height="220" preserveAspectRatio="none"></image>
+  <!-- Top bar (90s flat vibe) -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>Hunter Rohwer</span>
+      </div>
 
-      <!-- Big layered ridgelines (wider than screen so ends never show) -->
-      <g class="ridge-drift">
-        <polyline class="ridge-line layer l4"
-          points="0,135 160,110 320,135 480,105 640,140 800,112 960,145 1120,112 1280,140 1400,125" />
-        <polyline class="ridge-line layer l3"
-          points="0,128 160,103 320,128 480,98 640,133 800,105 960,138 1120,105 1280,133 1400,118" />
-        <polyline class="ridge-line layer l2"
-          points="0,120 160,95 320,120 480,90 640,125 800,97 960,130 1120,97 1280,125 1400,110" />
-        <polyline class="ridge-line layer l1"
-          points="0,110 160,85 320,110 480,80 640,115 800,87 960,120 1120,87 1280,115 1400,100" />
-      </g>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/hunterrohwer" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Zig-zag mountains/graph -->
+  <div class="ridge" aria-hidden="true">
+    <svg viewBox="0 0 1200 140" preserveAspectRatio="none">
+      <!-- stacked flat lines -->
+      <polyline class="r4" points="0,70 120,45 240,70 360,40 480,72 600,48 720,74 840,48 960,70 1080,45 1200,65" />
+      <polyline class="r3" points="0,82 120,57 240,82 360,52 480,84 600,60 720,86 840,60 960,82 1080,57 1200,77" />
+      <polyline class="r2" points="0,94 120,69 240,94 360,64 480,96 600,72 720,98 840,72 960,94 1080,69 1200,89" />
+      <polyline class="r1" points="0,106 120,81 240,106 360,76 480,108 600,84 720,110 840,84 960,106 1080,81 1200,101" />
     </svg>
   </div>
 
-  <div class="wrap">
-    <header class="hero">
-      <span class="badge">Available for interesting problems</span>
+  <!-- Main -->
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="stamp">AVAILABLE</div>
 
-      <h1>Hunter Rohwer</h1>
+        <h1>Data Scientist & Builder</h1>
+        <p class="lead">
+          I build tools fast, keep them clean, and make messy problems understandable.
+        </p>
 
-      <p class="subtitle">
-        Data Scientist & Builder — I build clean tools that make decisions easier.
-      </p>
+        <p class="meta">Denver, CO · Python · SQL · Modeling · Automation</p>
 
-      <p class="meta">
-        Denver, CO · Python · SQL · Modeling · Automation
-      </p>
-
-      <div class="cta">
-        <a class="btn" href="#projects">See projects</a>
-        <a class="btn ghost" href="#contact">Contact</a>
+        <div class="cta">
+          <a class="btn primary" href="#projects">See projects</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
       </div>
-    </header>
-  </div>
 
+      <div class="hero-right">
+        <!-- Placeholder “photo” -->
+        <div class="avatar" title="Add your photo later">
+          <span>HR</span>
+        </div>
+
+        <div class="mini">
+          <div class="mini-row"><span class="k">Status</span><span class="v">Building</span></div>
+          <div class="mini-row"><span class="k">Style</span><span class="v">Simple + Shippable</span></div>
+          <div class="mini-row"><span class="k">Bias</span><span class="v">Ownership</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="about">
+      <h2>About</h2>
+      <p>
+        I like taking vague requests and turning them into shipped work: models, pipelines,
+        dashboards, automations. I’m not precious — I iterate quickly and keep it readable.
+      </p>
+
+      <div class="chips">
+        <span class="chip">Practical</span>
+        <span class="chip">Fast</span>
+        <span class="chip">Reproducible</span>
+        <span class="chip">Clear Communication</span>
+      </div>
+    </section>
+
+    <section class="panel" id="projects">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p class="sub">Placeholders for now — swap with real links later.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Forecast Kit</h3>
+          <p>Reusable forecasting template with backtests and uncertainty bands.</p>
+          <div class="tags">
+            <span class="tag">time series</span><span class="tag">stats</span><span class="tag">python</span>
+          </div>
+          <div class="card-links">
+            <a href="#">Write-up</a>
+            <a href="#">Code</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Pipeline Monitor</h3>
+          <p>Data quality checks + alerting that generates a fix-first list.</p>
+          <div class="tags">
+            <span class="tag">etl</span><span class="tag">monitoring</span><span class="tag">sql</span>
+          </div>
+          <div class="card-links">
+            <a href="#">Overview</a>
+            <a href="#">Screens</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Decision Dashboard</h3>
+          <p>Flat, fast dashboard that answers “what changed?” and “what do we do?”</p>
+          <div class="tags">
+            <span class="tag">metrics</span><span class="tag">ux</span><span class="tag">bi</span>
+          </div>
+          <div class="card-links">
+            <a href="#">Demo</a>
+            <a href="#">Spec</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Signal Brief</h3>
+          <p>Weekly automated brief summarizing trends + drivers + next actions.</p>
+          <div class="tags">
+            <span class="tag">automation</span><span class="tag">analytics</span><span class="tag">reporting</span>
+          </div>
+          <div class="card-links">
+            <a href="#">Sample</a>
+            <a href="#">Template</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a>
+      </p>
+
+      <div class="contact-row">
+        <a class="btn small" href="https://github.com/hunterrohwer" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn small" href="#" aria-disabled="true">LinkedIn</a>
+        <a class="btn small" href="#" aria-disabled="true">Resume</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> Hunter Rohwer
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
