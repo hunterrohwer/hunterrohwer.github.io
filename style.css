@@ -1,179 +1,196 @@
-/* ====== SUPER SIMPLE GREEN THEME ====== */
-:root{
-  --bg: #d6dec2;      /* light green (page background) */
-  --ink: #0e1411;     /* text */
-  --muted: #3c4a41;   /* muted text */
-  --dark: #17402a;    /* deep green */
-  --mid: #2a5f3b;     /* mid green */
-  --olive: #97aa52;   /* retro olive */
-  --card: rgba(255,255,255,0.55);
-  --border: rgba(14,20,17,0.12);
+:root {
+  --paper: #f4efe6;
+  --ink: #1f2a24;
+
+  /* Retro outdoors */
+  --green: #2f5d50;
+  --blue:  #3d83aa;
+  --sage:  #9fb8a8;
+  --sun:   #f1d27a;
+
+  /* Set this to match the "bottom ridge" vibe */
+  --page-bg: #f1d27a; /* same as --sun by default */
+
+  --line: rgba(31,42,36,0.16);
+  --shadow: rgba(31,42,36,0.12);
 }
 
-*{ box-sizing:border-box; }
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg);
+/* Base */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
   color: var(--ink);
-  line-height: 1.5;
+
+  /* Make the whole page feel like it continues down from the bottom ridge */
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(31,42,36,0.02) 0px,
+      rgba(31,42,36,0.02) 3px,
+      rgba(0,0,0,0) 8px,
+      rgba(0,0,0,0) 13px
+    ),
+    var(--page-bg);
+
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
 }
 
-.wrap{
-  width: min(980px, calc(100% - 32px));
-  margin: 0 auto;
-}
-
-/* ====== NAV ====== */
-.nav{
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
-}
-.nav .wrap{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.brand{
-  font-weight: 800;
-  letter-spacing: -0.2px;
-}
-.links a{
-  margin-left: 14px;
-  color: var(--ink);
-  text-decoration:none;
-  font-weight: 650;
-  opacity: 0.85;
-}
-.links a:hover{ opacity: 1; text-decoration: underline; }
-
-/* ====== HERO ====== */
-.hero{
-  padding: 48px 0 0;
-}
-.kicker{
-  margin: 0 0 10px;
-  font-weight: 700;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 12px;
-}
-h1{
-  margin: 0 0 10px;
-  font-size: clamp(28px, 4vw, 44px);
-  line-height: 1.1;
-}
-.sub{
-  margin: 0 0 18px;
-  color: var(--muted);
-  max-width: 60ch;
-}
-
-.cta{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom: 24px; }
-
-.btn{
-  display:inline-block;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: var(--dark);
-  color: white;
-  text-decoration:none;
-  font-weight: 750;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-.btn:hover{ filter: brightness(1.03); }
-.btn.ghost{
-  background: transparent;
-  color: var(--ink);
-  border: 1px solid var(--border);
-}
-
-/* ====== MOUNTAINS (NO SVG) ====== */
-.mountains{
+/* ===== Ridge ===== */
+.ridge {
+  height: 190px;
+  overflow: hidden; /* clips drifting SVG */
   position: relative;
-  height: 210px;
-  overflow: hidden;
+
+  /* Soft atmospheric band at top */
+  background:
+    linear-gradient(180deg, rgba(61,131,170,0.18), rgba(241,210,122,0.0));
 }
 
-/* three horizontal bands = retro mountain layers */
-.band{
-  position:absolute;
-  left:0; right:0;
-}
-.band-1{
-  top: 0;
-  height: 38%;
-  background: var(--dark);
-}
-.band-2{
-  top: 38%;
-  height: 32%;
-  background: var(--mid);
-}
-.band-3{
-  top: 70%;
-  height: 30%;
-  background: var(--olive);
+/* Make SVG wider than viewport visually (overscan) */
+.ridge-svg {
+  width: 120%;
+  height: 100%;
+  display: block;
+  margin-left: -10%;
 }
 
-/* one thick angular "ridge" line using a clipped div */
-.ridge{
-  position:absolute;
-  left: -5%;
-  width: 110%;
-  top: 34%;
-  height: 120px;
-  background: rgba(255,255,255,0.55);
-
-  /* this makes it look like connected mountain/graph segments */
-  clip-path: polygon(
-    0% 60%,
-    12% 45%,
-    24% 55%,
-    36% 35%,
-    50% 48%,
-    64% 28%,
-    78% 46%,
-    90% 38%,
-    100% 50%,
-    100% 56%,
-    90% 44%,
-    78% 52%,
-    64% 34%,
-    50% 54%,
-    36% 40%,
-    24% 58%,
-    12% 50%,
-    0% 66%
-  );
-  border-radius: 18px;
-  filter: blur(0px);
-  opacity: 0.7;
+/* Optional depth image */
+.ridge-img {
+  opacity: 0.25;         /* keep it subtle */
+  filter: blur(0.4px);   /* soften */
+  mix-blend-mode: multiply;
 }
 
-/* ====== SECTIONS ====== */
-.section{
-  padding: 42px 0;
-}
-h2{
-  margin: 0 0 12px;
-  font-size: 22px;
-  letter-spacing: -0.2px;
-}
-.card{
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 14px;
-  margin: 12px 0;
-}
-.card h3{ margin: 0 0 6px; }
-.card p{ margin: 0; color: var(--muted); }
+/* Thick stacked lines */
+.ridge-line {
+  fill: none;
+  stroke-linejoin: bevel;
+  stroke-linecap: square;
 
-.muted{ color: var(--muted); }
+  /* thicker */
+  stroke-width: 26;
+  vector-effect: non-scaling-stroke;
+}
 
-.footer{
-  padding: 18px 0;
-  border-top: 1px solid var(--border);
+/* Colors */
+.l1 { stroke: var(--green); }
+.l2 { stroke: var(--blue); opacity: 0.85; }
+.l3 { stroke: var(--sage); opacity: 0.70; }
+
+/* bottom layer (same as page bg so it blends into the page) */
+.l4 { stroke: var(--page-bg); opacity: 1; }
+
+/* ---- Animation: very slow, subtle drift ---- */
+/* We drift the whole group, not each line separately, so it feels cohesive */
+.ridge-drift {
+  animation: drift 48s ease-in-out infinite;
+  filter: drop-shadow(0 3px 2px rgba(31,42,36,0.10));
+}
+
+/* Barely moving — "is it moving?" */
+@keyframes drift {
+  0%, 100% { transform: translateX(0px); }
+  50%      { transform: translateX(-22px); }
+}
+
+/* Reduce motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .ridge-drift { animation: none; }
+}
+
+/* ===== Content ===== */
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+
+.hero {
+  background: rgba(255,255,255,0.62);
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  padding: 34px;
+  box-shadow: 0 18px 60px var(--shadow);
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  background: rgba(231,220,198,0.9);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-family: ui-sans-serif, system-ui;
+  font-size: 0.92rem;
+}
+
+/* Headline */
+h1 {
+  font-size: 3.1rem;
+  margin: 18px 0 10px;
+  letter-spacing: -0.02em;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 7px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--green), var(--blue), var(--page-bg));
+  opacity: 0.95;
+}
+
+/* Copy */
+.subtitle {
+  font-family: ui-sans-serif, system-ui;
+  font-size: 1.1rem;
+  max-width: 60ch;
+  color: rgba(31,42,36,0.85);
+  margin-top: 8px;
+}
+
+.meta {
+  margin-top: 10px;
+  font-family: ui-sans-serif, system-ui;
+  color: rgba(31,42,36,0.65);
+}
+
+/* Buttons */
+.cta {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  font-family: ui-sans-serif, system-ui;
+  font-weight: 750;
+  text-decoration: none;
+  color: var(--ink);
+  background: linear-gradient(180deg, rgba(47,93,80,0.18), rgba(47,93,80,0.06));
+  box-shadow: 0 10px 22px rgba(31,42,36,0.10);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(31,42,36,0.12);
+}
+
+.btn.ghost {
+  background: linear-gradient(180deg, rgba(61,131,170,0.18), rgba(61,131,170,0.06));
+}
+
+/* Mobile */
+@media (max-width: 780px) {
+  .ridge { height: 170px; }
+  .ridge-svg { width: 135%; margin-left: -17.5%; } /* more overscan on small screens */
+  h1 { font-size: 2.6rem; }
 }
