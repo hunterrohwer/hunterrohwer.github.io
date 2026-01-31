@@ -1,95 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hunter Rohwer</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Hunter Rohwer — Data Scientist & Builder." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header class="nav">
-    <div class="wrap">
-      <div class="brand">Hunter Rohwer</div>
-      <div class="links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+
+  <!-- Zig-zag ridge header -->
+  <div class="ridge" aria-hidden="true">
+    <svg class="ridge-svg" viewBox="0 0 1400 220" preserveAspectRatio="none">
+      <!-- OPTIONAL depth image behind the ridges.
+           1) Put an image file in your repo (e.g., /assets/ridge-texture.png)
+           2) Update the href below
+           Use a subtle texture (paper grain / topo lines / haze). -->
+      <image class="ridge-img" href="assets/ridge-texture.png" x="0" y="0" width="1400" height="220" preserveAspectRatio="none"></image>
+
+      <!-- Big layered ridgelines (wider than screen so ends never show) -->
+      <g class="ridge-drift">
+        <polyline class="ridge-line layer l4"
+          points="0,135 160,110 320,135 480,105 640,140 800,112 960,145 1120,112 1280,140 1400,125" />
+        <polyline class="ridge-line layer l3"
+          points="0,128 160,103 320,128 480,98 640,133 800,105 960,138 1120,105 1280,133 1400,118" />
+        <polyline class="ridge-line layer l2"
+          points="0,120 160,95 320,120 480,90 640,125 800,97 960,130 1120,97 1280,125 1400,110" />
+        <polyline class="ridge-line layer l1"
+          points="0,110 160,85 320,110 480,80 640,115 800,87 960,120 1120,87 1280,115 1400,100" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap">
+    <header class="hero">
+      <span class="badge">Available for interesting problems</span>
+
+      <h1>Hunter Rohwer</h1>
+
+      <p class="subtitle">
+        Data Scientist & Builder — I build clean tools that make decisions easier.
+      </p>
+
+      <p class="meta">
+        Denver, CO · Python · SQL · Modeling · Automation
+      </p>
+
+      <div class="cta">
+        <a class="btn" href="#projects">See projects</a>
+        <a class="btn ghost" href="#contact">Contact</a>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <p class="kicker">Data Scientist • Denver, CO</p>
-        <h1>Simple, clean, and a little retro.</h1>
-        <p class="sub">
-          This is a quick POC layout: just enough structure to see the vibe and iterate fast.
-        </p>
-
-        <div class="cta">
-          <a class="btn" href="#projects">Projects</a>
-          <a class="btn ghost" href="#contact">Contact</a>
-        </div>
-      </div>
-
-      <!-- Simple retro "mountains" -->
-      <div class="mountains" aria-hidden="true">
-        <div class="band band-1"></div>
-        <div class="band band-2"></div>
-        <div class="band band-3"></div>
-
-        <!-- one thick "graph/mountain" line -->
-        <div class="ridge"></div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="wrap">
-        <h2>About</h2>
-        <p>
-          Short bio goes here. Keep it 2–3 sentences. You can expand later.
-        </p>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="wrap">
-        <h2>Projects</h2>
-
-        <div class="card">
-          <h3>Project One</h3>
-          <p>One-line description.</p>
-        </div>
-
-        <div class="card">
-          <h3>Project Two</h3>
-          <p>One-line description.</p>
-        </div>
-
-        <div class="card">
-          <h3>Project Three</h3>
-          <p>One-line description.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="wrap">
-        <h2>Contact</h2>
-        <p>
-          Add your email + links later. For now this is just layout.
-        </p>
-        <p class="muted">Email: you@example.com • GitHub • LinkedIn</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <span class="muted">© 2026 Hunter Rohwer</span>
-    </div>
-  </footer>
 </body>
 </html>
