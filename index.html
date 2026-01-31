@@ -2,162 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hunter Rohwer</title>
-  <meta name="description" content="Hunter Rohwer — Data Scientist & Builder" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Top bar (90s flat vibe) -->
+  <!-- Top nav -->
   <header class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <span class="brand-dot"></span>
-        <span>Hunter Rohwer</span>
-      </div>
-
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="https://github.com/hunterrohwer" target="_blank" rel="noreferrer">GitHub ↗</a>
-      </nav>
+    <div class="brand">
+      <span class="square"></span>
+      <span>HUNTER ROHWER</span>
     </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/" target="_blank">GitHub ↗</a>
+    </nav>
   </header>
 
+  <!-- Vertical gradient stripes -->
   <div class="ridge" aria-hidden="true">
-    <div class="stripe s1"></div>
-    <div class="stripe s2"></div>
-    <div class="stripe s3"></div>
-    <div class="stripe s4"></div>
+    <div class="vstripe v1"></div>
+    <div class="vstripe v2"></div>
+    <div class="vstripe v3"></div>
+    <div class="vstripe v4"></div>
   </div>
 
-  <!-- Main -->
-  <main class="wrap">
-    <section class="hero">
-      <div class="hero-left">
-        <div class="stamp">AVAILABLE</div>
+  <main class="page">
 
-        <h1>Data Scientist & Builder</h1>
-        <p class="lead">
-          I build tools fast, keep them clean, and make messy problems understandable.
-        </p>
+    <!-- HERO -->
+    <section class="card hero">
+      <span class="badge">AVAILABLE</span>
 
-        <p class="meta">Denver, CO · Python · SQL · Modeling · Automation</p>
+      <div class="hero-grid">
+        <div>
+          <h1>Data Scientist & Builder</h1>
+          <p class="subtitle">
+            I build tools fast, keep them clean, and make messy problems understandable.
+          </p>
 
-        <div class="cta">
-          <a class="btn primary" href="#projects">See projects</a>
-          <a class="btn" href="#contact">Contact</a>
-        </div>
-      </div>
+          <p class="meta">
+            Denver, CO · Python · SQL · Modeling · Automation
+          </p>
 
-      <div class="hero-right">
-        <!-- Placeholder “photo” -->
-        <div class="avatar" title="Add your photo later">
-          <span>HR</span>
+          <div class="actions">
+            <a class="btn primary" href="#projects">See projects</a>
+            <a class="btn" href="#contact">Contact</a>
+          </div>
         </div>
 
-        <div class="mini">
-          <div class="mini-row"><span class="k">Status</span><span class="v">Building</span></div>
-          <div class="mini-row"><span class="k">Style</span><span class="v">Simple + Shippable</span></div>
-          <div class="mini-row"><span class="k">Bias</span><span class="v">Ownership</span></div>
+        <div class="status">
+          <div class="avatar">HR</div>
+          <div class="stats">
+            <div><strong>Status</strong><span>Building</span></div>
+            <div><strong>Style</strong><span>Simple + Shippable</span></div>
+            <div><strong>Bias</strong><span>Ownership</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="panel" id="about">
+    <!-- ABOUT -->
+    <section id="about" class="card">
       <h2>About</h2>
       <p>
-        I like taking vague requests and turning them into shipped work: models, pipelines,
-        dashboards, automations. I’m not precious — I iterate quickly and keep it readable.
+        I like taking vague requests and turning them into shipped work:
+        models, pipelines, dashboards, automations. I’m not precious —
+        I iterate quickly and keep it readable.
       </p>
 
-      <div class="chips">
-        <span class="chip">Practical</span>
-        <span class="chip">Fast</span>
-        <span class="chip">Reproducible</span>
-        <span class="chip">Clear Communication</span>
+      <div class="tags">
+        <span>Practical</span>
+        <span>Fast</span>
+        <span>Reproducible</span>
+        <span>Clear Communication</span>
       </div>
     </section>
 
-    <section class="panel" id="projects">
-      <div class="section-head">
+    <!-- PROJECTS -->
+    <section id="projects" class="card">
+      <div class="projects-header">
         <h2>Projects</h2>
-        <p class="sub">Placeholders for now — swap with real links later.</p>
+        <span class="note">Placeholders for now — swap with real links later.</span>
       </div>
 
-      <div class="grid">
-        <article class="card">
+      <div class="projects">
+        <div class="project">
           <h3>Forecast Kit</h3>
-          <p>Reusable forecasting template with backtests and uncertainty bands.</p>
-          <div class="tags">
-            <span class="tag">time series</span><span class="tag">stats</span><span class="tag">python</span>
+          <p>
+            Reusable forecasting template with backtests and uncertainty bands.
+          </p>
+          <div class="tags small">
+            <span>Time Series</span>
+            <span>Stats</span>
+            <span>Python</span>
+            <span>Write-up</span>
+            <span>Code</span>
           </div>
-          <div class="card-links">
-            <a href="#">Write-up</a>
-            <a href="#">Code</a>
-          </div>
-        </article>
+        </div>
 
-        <article class="card">
+        <div class="project">
           <h3>Pipeline Monitor</h3>
-          <p>Data quality checks + alerting that generates a fix-first list.</p>
-          <div class="tags">
-            <span class="tag">etl</span><span class="tag">monitoring</span><span class="tag">sql</span>
+          <p>
+            Data quality checks + alerting that generates a fix-first list.
+          </p>
+          <div class="tags small">
+            <span>ETL</span>
+            <span>Monitoring</span>
+            <span>SQL</span>
+            <span>Screens</span>
           </div>
-          <div class="card-links">
-            <a href="#">Overview</a>
-            <a href="#">Screens</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Decision Dashboard</h3>
-          <p>Flat, fast dashboard that answers “what changed?” and “what do we do?”</p>
-          <div class="tags">
-            <span class="tag">metrics</span><span class="tag">ux</span><span class="tag">bi</span>
-          </div>
-          <div class="card-links">
-            <a href="#">Demo</a>
-            <a href="#">Spec</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <h3>Signal Brief</h3>
-          <p>Weekly automated brief summarizing trends + drivers + next actions.</p>
-          <div class="tags">
-            <span class="tag">automation</span><span class="tag">analytics</span><span class="tag">reporting</span>
-          </div>
-          <div class="card-links">
-            <a href="#">Sample</a>
-            <a href="#">Template</a>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
 
-    <section class="panel" id="contact">
-      <h2>Contact</h2>
-      <p>
-        Email: <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a>
-      </p>
-
-      <div class="contact-row">
-        <a class="btn small" href="https://github.com/hunterrohwer" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn small" href="#" aria-disabled="true">LinkedIn</a>
-        <a class="btn small" href="#" aria-disabled="true">Resume</a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      © <span id="year"></span> Hunter Rohwer
-    </footer>
   </main>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
