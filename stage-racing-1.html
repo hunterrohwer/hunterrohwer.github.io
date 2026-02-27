@@ -33,42 +33,185 @@
     <section class="card" id="overview">
       <div class="section-header">
         <h2>Did Stage Racing Increase Chaos in NASCAR?</h2>
-        <span class="note">Placeholder page — add content whenever.</span>
+        <span class="note">Cup Series · 2014–2019 analysis</span>
       </div>
 
       <p>
-        This page will become the home for the Stage Racing project: write-up, charts,
-        methodology, and links to code.
+        In 2017, NASCAR introduced stage racing. Critics argued that adding guaranteed restarts
+        would increase late-race aggression and crashes.
+      </p>
+
+      <p>
+        I built a race-level dataset of all NASCAR Cup Series races from 2014–2019 to test a
+        simple question:
+      </p>
+
+      <p><strong>Did stage racing increase unscheduled cautions?</strong></p>
+
+      <hr />
+
+      <h3>Data</h3>
+      <p>
+        I manually constructed a structured dataset of 216 Cup races (2014–2019). Each race includes:
+      </p>
+      <ul>
+        <li>Total cautions</li>
+        <li>Scheduled cautions (stage ends, competition cautions)</li>
+        <li>Unscheduled cautions (loss of control, crashes, debris)</li>
+        <li>Track classification (short, intermediate, road course, superspeedway, non-standard)</li>
+      </ul>
+
+      <p>
+        The core outcome variable is <strong>unscheduled cautions per race</strong>.
+      </p>
+
+      <hr />
+
+      <h3>Descriptive Results</h3>
+
+      <p>
+        Unscheduled cautions declined steadily over the sample period:
+      </p>
+
+      <ul>
+        <li>2014: 8.06</li>
+        <li>2015: 7.86</li>
+        <li>2016: 6.97</li>
+        <li>2017: 5.97</li>
+        <li>2018: 4.56</li>
+        <li>2019: 4.67</li>
+      </ul>
+
+      <p>
+        Pre-2017 average: <strong>7.63</strong><br />
+        Post-2017 average: <strong>5.06</strong>
+      </p>
+
+      <p>
+        At first glance, unscheduled cautions appear to fall after stage racing was introduced.
+        However, the decline began prior to 2017.
+      </p>
+
+      <hr />
+
+      <h3>Regression Analysis</h3>
+
+      <p>
+        To separate time trends from the policy change, I estimated:
+      </p>
+
+      <pre><code>
+unscheduled_cautions ~ season_trend + post_2017 + track_type
+      </code></pre>
+
+      <p>
+        Results:
+      </p>
+
+      <ul>
+        <li>Significant negative yearly trend (~ -0.57 cautions per year, p &lt; 0.01)</li>
+        <li>No statistically significant post-2017 structural break</li>
+      </ul>
+
+      <p>
+        These findings remain consistent after:
+      </p>
+
+      <ul>
+        <li>Controlling for track type</li>
+        <li>Adding track fixed effects</li>
+        <li>Clustering standard errors by track</li>
+      </ul>
+
+      <hr />
+
+      <h3>Track-Level Breakdown</h3>
+
+      <p>
+        The decline in unscheduled cautions occurred within:
+      </p>
+
+      <ul>
+        <li>Short tracks</li>
+        <li>Intermediate tracks</li>
+        <li>Road courses</li>
+      </ul>
+
+      <p>
+        Superspeedways showed little structural change.
+      </p>
+
+      <p>
+        This suggests the result is not driven by schedule composition.
+      </p>
+
+      <hr />
+
+      <h3>Conclusion</h3>
+
+      <p>
+        From 2014–2019, unscheduled cautions in the NASCAR Cup Series declined steadily.
+        After accounting for trend and track characteristics, the introduction of stage racing
+        does not produce a detectable increase in unplanned race interruptions.
+      </p>
+
+      <p>
+        Stage racing changed the structure of races — but the data do not support the claim
+        that it increased chaos.
       </p>
 
       <div class="actions">
-        <a class="btn primary" href="#code">Jump to code</a>
-        <a class="btn" href="index.html#projects">Back to projects</a>
+        <a class="btn primary" href="#demo">See visualizations</a>
+        <a class="btn" href="#code">View code</a>
       </div>
     </section>
+
 
     <section class="card" id="code">
       <div class="section-header">
-        <h2>Code</h2>
-        <span class="note">Add GitHub link later.</span>
+        <h2>Code & Reproducibility</h2>
+        <span class="note">Dataset + regression notebooks</span>
       </div>
 
-      <p>Placeholder: repo link, notebooks, scraping steps, and analysis scripts.</p>
+      <p>
+        The dataset was constructed manually using publicly available race reports.
+        Analysis was conducted in Python using pandas and statsmodels.
+      </p>
+
+      <ul>
+        <li>Race-level data construction</li>
+        <li>Caution classification logic</li>
+        <li>Trend + fixed-effect regression models</li>
+      </ul>
+
+      <p><em>GitHub link coming soon.</em></p>
+
       <a class="mini-link" href="#" aria-disabled="true">GitHub (soon)</a>
     </section>
 
+
     <section class="card" id="demo">
       <div class="section-header">
-        <h2>Demo</h2>
-        <span class="note">Add plots / screenshots later.</span>
+        <h2>Visualizations</h2>
+        <span class="note">Add plots as PNG exports</span>
       </div>
 
-      <div class="visual-box" style="height:220px;">
+      <div class="visual-box" style="height:260px;">
         <div>
-          <div class="media-label">CHART PLACEHOLDER</div>
-          <div class="media-sub">Drop a PNG here later</div>
+          <div class="media-label">YEARLY TREND PLOT</div>
+          <div class="media-sub">Line chart · 2014–2019 · Vertical marker at 2017</div>
         </div>
       </div>
+
+      <br />
+
+      <div class="visual-box" style="height:260px;">
+        <div>
+          <div class="media-label">TRACK-TYPE BREAKDOWN</div>
+          <div class="media-sub">Pre vs Post comparison by track category</div>
+        </div>
+      </div>
+
     </section>
 
   </main>
